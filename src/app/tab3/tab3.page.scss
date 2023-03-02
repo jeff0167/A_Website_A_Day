@@ -1,0 +1,41 @@
+body{
+    background-color: rgb(10,10,10);
+    display: grid;
+    height: 100vh;
+    margin: 0px;
+    padding: 0px;
+    place-items: center;
+}
+
+.key{
+    color: white;
+    font-size: clamp(2rem, 2vw, 10rem);
+    font-family: "Rubik", sans-serif;
+    margin: 0rem;
+    text-transform: uppercase;
+    transition: opacity 200ms ease;
+    display: inline-block;
+}
+
+.key:hover{
+    color: rgb(255, 232, 31);
+    opacity: 0.8;
+    scale: 1.05;
+}
+
+.value{
+    color: white;
+    font-family: "Rubik", sans-serif;
+    margin: 1rem;
+    text-transform: uppercase;
+    transition: opacity 200ms ease;
+    display: inline-block;
+    // display: flex; // flex for lines, 
+    // justify-content: space-between;
+}
+
+.value:hover{
+    color: rgb(255, 57, 31);
+    opacity: 0.8;
+    scale: 1.05;
+}
