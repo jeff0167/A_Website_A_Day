@@ -1,0 +1,84 @@
+<body>
+  <!--place them on the right, size total is 12      1  7  3  1-->
+  <ion-grid>
+    <ion-row>
+    <ion-col size="0.5"></ion-col>
+    <ion-col size="8">
+      <ion-card>
+        <ion-card-header>
+          <img class="videoCard" alt="Mountain View" src="https://i.ytimg.com/vi/LXybWcPHMXc/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFTyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLB5_1hRZ-kI9cuJWwlMIQDJFWIYZw">
+          <ion-card-title>Mountain View</ion-card-title>
+          
+          <div class="videoAction">
+            <ion-grid style="padding: 0%;">
+              <ion-row>
+                <ion-col size="auto">
+                  <ion-avatar>
+                    <img alt="StylishDude" src="https://yt3.ggpht.com/ytc/AL5GRJW0iGfi0QNNmMA-bjmd2XsZDA2qMwoBikYLJkSSHQ=s88-c-k-c0x00ffffff-no-rj">
+                  </ion-avatar>
+                </ion-col>
+                <ion-col size="auto">
+                  <!--god awful, multiple grids, inline styling, cause things just not centered at ALL -->
+                  <ion-grid>
+                    <ion-row>  
+                        <ion-label style="font-size: 18px; color: white; margin-right: 5px;">Ikigai</ion-label>
+                        <ion-icon style="scale:1.2; margin-top: 3px;" name="checkmark-circle"></ion-icon>            
+                    </ion-row>
+                    <ion-row>
+                      <ion-label>537k subscribers</ion-label>
+                    </ion-row>
+                  </ion-grid>
+                </ion-col>
+                <ion-col>
+                  <ion-chip class="subscribeButton" (click)="subscribe()">Subscribe</ion-chip>
+                </ion-col>
+                <ion-col size="auto">
+                  <ion-chip>
+                    <ion-icon name="thumbs-up-outline"></ion-icon>
+                    <ion-label>100</ion-label>
+                    <ion-icon name="thumbs-down-outline"></ion-icon>
+                    <ion-label>2</ion-label>
+                  </ion-chip>
+                </ion-col>
+                <ion-col size="auto">
+                  <ion-chip>
+                      <ion-icon name="arrow-redo-outline"></ion-icon>
+                    <ion-label>Share</ion-label>
+                  </ion-chip>
+                </ion-col>
+                <ion-col size="auto">
+                  <ion-chip>
+                    <ion-icon style="color:white" name="ellipsis-horizontal"></ion-icon>
+                  </ion-chip>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+          </div>
+          <!--need a circle image with channel name and sub count-->
+          <!--need subcribe button-->
+          <!--need like and dislike button-->
+          <!--need share button-->
+          <!--need other button-->
+        </ion-card-header>
+      </ion-card>
+    </ion-col>
+    <ion-col size="3">
+      <ion-list *ngFor="let _ of [].constructor(1)">
+          <!--place comment section with list of comments under neath-->
+        <ion-card> 
+          <img class="subVideoCard" alt="Mountain View" src="https://i.ytimg.com/vi/ed5xTnsH8zw/hqdefault.jpg?sqp=-oaymwEcCNACELwBSFTyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLD4KzfABNCfG71X4nVndXvwYE1eBQ">
+          <ion-card-header> 
+            <ion-card-title>Video title</ion-card-title>
+            <ion-card-subtitle>so many views</ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content>
+            Like and subscribe
+          </ion-card-content>
+        </ion-card>
+      </ion-list>
+    </ion-col>
+    <ion-col size="0.5"></ion-col>
+  </ion-row>
+  </ion-grid>
+
+</body>

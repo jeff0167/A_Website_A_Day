@@ -1,0 +1,57 @@
+img.videoCard{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+.subVideoCard{ // inherit much?
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  border-radius: 5%;
+}
+
+.videoAction{
+  scale: 5.5;
+  display: inline; // there is flex and the other one, don't remmemebr 
+}
+
+.channelIcon{
+  background: #0f0f0f;
+}
+
+.subscribeButton{
+  background: #f1f1f1;
+  font-family: "Rubik", sans-serif;
+  color:#0f0f0f
+}
+
+.subscribeButton:hover{
+  background: #cacaca;
+}
+
+body{
+background: #0f0f0f;
+}
+
+ion-list{
+  background: #0f0f0f;
+}
+
+ion-card {
+  background: #0f0f0f;
+  border-radius: 0px;
+  margin: 0%;
+  box-shadow: none;
+  // color: #9efff0;
+}
+
+ion-card-title {
+  //color: #52ffe4;
+}
+
+ion-card-subtitle {
+  color: #ffffff;
+}
