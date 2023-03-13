@@ -36,8 +36,44 @@ body{
 background: #0f0f0f;
 }
 
+ion-content{
+  background: #0f0f0f;
+}
+
+ion-header{
+  background: #0f0f0f;
+  color:#0f0f0f;
+}
+
 ion-list{
   background: #0f0f0f;
+}
+
+#backgroundImage{
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+}
+
+#planet {
+  width: 200px;
+  height: 200px;
+  translate: 700px -450px;
+  background-size: cover;
+  background-image: radial-gradient(circle at 20% 20%, rgba(255,255,255,0.7) 0%, rgba(0,0,0,0.1) 100%),
+  radial-gradient(circle at 80% 80%, rgba(0,0,0,0.6) 0%, rgba(255,255,255,0.1) 100%),
+  url('https://cdn.pixabay.com/photo/2016/04/02/21/01/earth-1303628_1280.png');
+  box-shadow: 0 0 10px rgba(0,0,0,0.3), inset 0 0 10px rgba(255,255,255,0.3);
+  animation: rotate 50s linear infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 ion-card {
