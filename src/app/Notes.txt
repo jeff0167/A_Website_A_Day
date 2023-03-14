@@ -1,0 +1,7 @@
+I have the idea of creating website where all buttons and elements are being moved to where they are needed on the next page or tab
+All elements will move and change depending on the current state of the site and the next state that you are navigating to
+All elements will exist and can be used to be shown on a new state of the site if not enough relevant elements are currently showed
+As an example, you have a button you click it and the page layout changes and the button then changes positon, color, size or text what ever it needs
+to in the new page layout
+It makes is so the site feel very allive, elements stay alive and consistent, or new spawn showing life and continuety, all elements come from somewhere
+nothing is weirdly created. Seems smooth and reactive for a user and more rigid and fun

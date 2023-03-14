@@ -1,0 +1,47 @@
+.JumpingButton{
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    --background: red; // not allowed to animate it seems, works fine when not using ionic
+
+}
+
+.MovingAnim{
+    margin: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    animation-name: move;
+    animation-duration: 2s;
+    //animation-iteration-count: infinite; // do i need to reset the anim through css or something?    remove me for idk
+
+    // ok it clearly doesn't get updated it's class back to JumpingButton
+    --background: blue; // hmm it should change back to red but it didn't
+}
+
+div {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    animation-name: example;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+  }
+  
+  @keyframes example {
+    0%   {--background: red;}
+    25%  {--background: yellow;}
+    50%  {--background: blue;}
+    75%  {--background: green;}
+    100% {--background: red;}
+  }
+
+  @keyframes move {
+    0%   {transform: translate(0,0)}
+    25%   {transform: translate(25,25)}
+    50%   {transform: translate(50,50)}
+    75%   {transform: translate(75,75)}
+    100%   {transform: translate(100,100)}
+
+  }
