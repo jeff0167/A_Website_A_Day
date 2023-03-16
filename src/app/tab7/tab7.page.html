@@ -1,0 +1,87 @@
+  <style>
+    body{
+      background: #000000;
+      position: relative;
+      overflow: hidden;
+      margin: 0;
+    }
+  </style>
+<body>
+  <h1>hi</h1>
+  <canvas></canvas>
+</body>
+
+<script>
+
+  const canvas = document.querySelector('canvas');
+  const ctx = canvas.getContext('2d');
+
+  let cord = {x: 0, y: 0};
+  let paint = false;
+  let started = false;
+
+  window.addEventListener("mousedown", startPaint);
+  window.addEventListener("mousemove", sketch);
+  window.addEventListener("mouseup", stopPainting);
+
+  function getPosition(event) {
+    if(event.type === 'mousedown' || event.type === 'mousemove'){
+      cord.x = event.clientX - canvas.offsetLeft;
+      cord.y = event.clientY - canvas.offsetTop;
+    }
+  }
+
+  function clearCanvas() {
+    ctx.fillStyle = "white";
+    ctx.beginPath();
+    ctx.rect(0,0,window.innerWidth, window.innerHeight);
+    ctx.fill();
+  }
+
+  function applyFade() {
+    ctx.fillStyle = "rgba(255,255,255, 0.05)";
+
+    let count = 0;
+    const interval = setInterval(() => {
+      if(count < 4){
+        ctx.beginPath();
+        ctx.rect(0,0,window.innerWidth, window.innerHeigth);
+        ctx.fill();
+        count++;
+
+      }else{
+        clearInterval(interval);
+      }
+    }, 100);
+  }
+
+  function startPaint(event) {
+    if(!started) {
+      clearCanvas();
+      started = true;
+    }
+    paint = true;
+    getPosition(event);
+  }
+
+  function sketch(event) {
+    if(!paint) return;
+    ctx.beginPath();
+
+    ctx.lineWidth = 5;
+    ctx.lineCap = "round";
+    ctx.strokeStyle = "white";
+    ctx.moveTo(cord.x, cord.y);
+
+    getPosition(event);
+    ctx.lineTo(cord.x, cord.y);
+
+    ctx.stroke();
+  }
+
+  function stopPainting() {
+    paint = false;
+    applyFade();
+  }
+
+</script>
