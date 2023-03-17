@@ -3,19 +3,25 @@
       <ion-row>
         <ion-col size="1"></ion-col>
         <ion-col size="10">
+
           <ion-header class="navBar">
             <ion-toolbar>
-              <h1>Home</h1>
-              <h1>Manga List</h1>
-              <h1>New Release</h1>
-              <h1>Genre</h1>
-              <h1>History</h1>
-              <h1>Bookmark</h1>
-              <h1>Random</h1>
-
-              <!--need the other side on the right-->
+              <div slot="start" class="searchbar-container">
+                <ion-text>Home</ion-text>
+                <ion-text>Manga List</ion-text>
+                <ion-text>New Release</ion-text>
+                <ion-text>Genre</ion-text>
+                <ion-text>History</ion-text>
+                <ion-text>Bookmark</ion-text>
+                <ion-text>Random</ion-text>
+              </div>
+                <div class="searchbar-container" slot="end">
+                  <ion-text>Some text</ion-text>
+                  <ion-searchbar color="light" placeholder="Search here"></ion-searchbar>
+                </div>
             </ion-toolbar>
           </ion-header>
+          
           <ion-content>
               <!--time for the main content-->
           </ion-content>

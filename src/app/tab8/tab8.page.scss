@@ -2,15 +2,38 @@ body{
     --ion-toolbar-background: rgb(10,10,10); // https://ionicframework.com/docs/theming/themes#application-colors    color the ion elements... so sad it must be done like this
     --ion-background-color: rgb(10,10,10);
     background-color: rgb(10,10,10);
+    --ion-text-color: white;
 }
 
 .navBar{
+    display: flex;
+    align-items: center;
     border-style: solid;
+    border-color: white;
     border-bottom-color: red; // make smaller
     width: 100%;
     padding: 2px;   
     transform: translate(0,-10px);
 }
+
+.searchbar-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .searchbar-container ion-searchbar {
+    flex: 1;
+    margin-right: 8px;
+  }
+  
+  .searchbar-container ion-text {
+    font-size: medium;
+    display: inline;
+    font-size: 17px;
+    background-color: rgb(10,10,10);
+    padding: 20px;
+  }  
+ 
 
 .navBar h1{
     display: inline;

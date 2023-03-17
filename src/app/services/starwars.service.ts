@@ -6,7 +6,7 @@ import * as _ from 'lodash';
 import { interval, take, lastValueFrom } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root' // hmm, have seen places where this is omitted, and the class is directly within this scope, why?
 })
 export class StarwarsService {
 
