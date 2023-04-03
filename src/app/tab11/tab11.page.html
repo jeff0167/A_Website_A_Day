@@ -1,0 +1,11 @@
+<body>
+
+  <ion-list *ngFor="let baby of babies">
+    <h1>{{baby | json}}</h1>
+  </ion-list>
+
+  <ion-button (click)="vibrate">Vibrate Single</ion-button>
+  <ion-button (click)="vibratePattern">Vibrate Pattern</ion-button>
+
+  <li style="position: relative;" *ngFor="let item of generateArray(babies)"><p class="key">{{item.key}}:</p> <p class="value">{{item.value}}</p></li>
+</body>

@@ -14,9 +14,7 @@ export class StarwarsService {
 
   baseUrl = 'https://swapi.dev/api/';  // this also directly takes u to the website, where u can see the api
 
-  constructor(
-    private http: HttpClient
-  ) { }
+  constructor(private http: HttpClient) { }
 
   initialize() {
     this.getPeople();

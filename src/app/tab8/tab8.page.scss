@@ -3,6 +3,7 @@ body{
     --ion-background-color: rgb(10,10,10);
     background-color: rgb(10,10,10);
     --ion-text-color: white;
+    --ion-item-background: rgb(10,10,10);
 }
 
 .navBar{
@@ -10,34 +11,36 @@ body{
     align-items: center;
     border-style: solid;
     border-color: white;
-    border-bottom-color: red; // make smaller
+    border-bottom-color: #aa0000; // make smaller
     width: 100%;
-    padding: 2px;   
+    align-self: center;
+    padding: 0px;   
     transform: translate(0,-10px);
 }
 
 .searchbar-container {
     display: flex;
     align-items: center;
-  }
+}
   
   .searchbar-container ion-searchbar {
     flex: 1;
     margin-right: 8px;
-  }
+    text-align: left; // still can't godanm change the color of the searchbar, using --color or --background doesn't do anything
+}
   
   .searchbar-container ion-text {
     font-size: medium;
     display: inline;
-    font-size: 17px;
-    background-color: rgb(10,10,10);
+    font-size: 16px;
+    //background-color: rgb(10,10,10);
     padding: 20px;
-  }  
- 
+}  
 
-.navBar h1{
-    display: inline;
-    font-size: 17px;
-    background-color: rgb(10,10,10);
-    padding: 20px;
+ion-card{
+  background-color: rgb(10,10,10);
+}
+
+ion-item{
+  --border-color: rgb(10,10,10);
 }

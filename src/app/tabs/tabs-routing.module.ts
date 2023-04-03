@@ -5,7 +5,7 @@ import { TabsPage } from './tabs.page';
 const routes: Routes = [
   {
     path: 'tabs',
-    component: TabsPage,
+    component: TabsPage, //RestAPIConsuming_BabyData
     children: [
       {
         path: 'tab1',
@@ -42,6 +42,14 @@ const routes: Routes = [
       {
         path: 'tab9',
         loadChildren: () => import('../tab9/tab9.module').then(m => m.Tab9PageModule)
+      },    
+      {
+        path: 'tab10',
+        loadChildren: () => import('../tab10/tab10.module').then(m => m.Tab10PageModule)
+      },
+      {
+        path: 'tab11',
+        loadChildren: () => import('../tab11/tab11.module').then(m => m.Tab11PageModule)
       },
       {
         path: '',

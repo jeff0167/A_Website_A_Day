@@ -1,0 +1,50 @@
+body{
+    --ion-toolbar-background: rgb(10,10,10); // https://ionicframework.com/docs/theming/themes#application-colors    color the ion elements... so sad it must be done like this
+    --ion-background-color: rgb(10,10,10);
+    background-color: rgb(10,10,10);
+    --ion-text-color: rgb(255, 255, 255);
+    --ion-item-background: rgb(10,10,10);
+    --ion-box-shadow-color: rgb(10,10,10);
+}
+
+ion-card{
+    background-color: rgb(10,10,10);
+    transition: all 0.3s ease; // easy!!
+    margin: 20px;
+    // dude I just can't override the centering from the grid
+}
+
+ion-label{
+    color: rgb(255, 255, 255); // why the hell does the ion-text-color, which should set the text color of the entire app, not work on this label?
+}
+
+ion-card:hover{
+    background-color: rgb(64, 133, 168);
+    // can i give it slight transition?
+
+    ion-icon{
+        color: rgb(255, 255, 255);
+    }
+}
+
+ion-card > img:hover {
+    cursor: pointer;
+}
+
+ion-grid{
+    display: grid;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-items: center;
+
+    ion-label{
+        font-size: 20px;
+    }
+}
+
+ion-icon{
+    color: rgba(0, 0, 0, 0);
+}
+
+// need to be able to change the link, maybe even the image as well and change the title, or even the rows and all that

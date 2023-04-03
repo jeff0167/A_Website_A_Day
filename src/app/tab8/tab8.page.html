@@ -1,32 +1,66 @@
 <body>
-    <ion-grid>
-      <ion-row>
-        <ion-col size="1"></ion-col>
-        <ion-col size="10">
-
-          <ion-header class="navBar">
-            <ion-toolbar>
-              <div slot="start" class="searchbar-container">
-                <ion-text>Home</ion-text>
-                <ion-text>Manga List</ion-text>
-                <ion-text>New Release</ion-text>
-                <ion-text>Genre</ion-text>
-                <ion-text>History</ion-text>
-                <ion-text>Bookmark</ion-text>
-                <ion-text>Random</ion-text>
-              </div>
-                <div class="searchbar-container" slot="end">
-                  <ion-text>Some text</ion-text>
-                  <ion-searchbar color="light" placeholder="Search here"></ion-searchbar>
-                </div>
-            </ion-toolbar>
-          </ion-header>
-          
-          <ion-content>
-              <!--time for the main content-->
-          </ion-content>
-        </ion-col>
-        <ion-col size="1"></ion-col>
-      </ion-row>
-    </ion-grid>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="2.9"></ion-col>
+      <ion-col size="6.2">
+        <ion-header class="navBar">
+          <ion-toolbar>
+            <div slot="start" class="searchbar-container">
+              <ion-text>Home</ion-text>
+              <ion-text>Manga List</ion-text>
+              <ion-text>New Release</ion-text>
+              <ion-text>Genre</ion-text>
+              <ion-text>History</ion-text>
+              <ion-text>Bookmark</ion-text>
+              <ion-text>Random</ion-text>
+            </div>
+            <div class="searchbar-container" slot="end">
+              <ion-text>Search More</ion-text>
+              <ion-searchbar color="light" placeholder="Search"></ion-searchbar>
+            </div>
+          </ion-toolbar>
+        </ion-header>
+        <ion-card>
+          <ion-grid>
+            <ion-row>
+              <ion-col size="4">
+                <ion-list line="none" >
+                  <ion-item *ngFor="let item of users2">
+                    <p>{{item | json}}</p>
+                  </ion-item>
+                </ion-list>
+              </ion-col>
+              <ion-col size="8">
+                <ion-list line="none">
+                  <ion-item *ngFor="let item of users">
+                    <p>{{item | json}}</p>
+                  </ion-item>
+                </ion-list>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-card>
+        <!-- <ion-grid>
+              <ion-row>
+                <ion-col size="4">
+                  <ion-list line="none">
+     
+                    <ion-item *ngFor="let item of users">
+                      <p>{{item | json}}</p>
+                    </ion-item>
+                  </ion-list>
+                </ion-col>
+                <ion-col size="8">
+                  <ion-list line="none">
+                    <ion-item *ngFor="let item of users">
+                      <p>{{item | json}}</p>
+                    </ion-item>
+                  </ion-list>
+                </ion-col>
+              </ion-row>
+            </ion-grid> -->
+      </ion-col>
+      <ion-col size="2.9"></ion-col>
+    </ion-row>
+  </ion-grid>
 </body>
