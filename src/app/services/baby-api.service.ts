@@ -3,7 +3,9 @@ import { HttpClient } from '@angular/common/http';
 import { BabyData } from '../interfaces/BabyData';
 import * as _ from 'lodash';
 
-import { interval, take, lastValueFrom } from 'rxjs';
+import { environment } from 'src/environments/environment';
+
+import { interval, take, lastValueFrom, retry, Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -14,17 +16,40 @@ export class BabyAPIService {
 
   baseUrl = 'http://localhost:33463/api/BabyData/'; 
 
+  baseUrl2 = 'https://bob-tours-app-6c3d9-default-rtdb.europe-west1.firebasedatabase.app/.json';
+
   constructor(private http: HttpClient) { 
 
   }
 
+
+  /// SOLUTION?!!?!??!?!
+  /// https://github.com/firebase/firebase-js-sdk/issues/6993
+
   initialize() {
-    this.getPeople();
+    //this.getPeople();
   }
 
   async getPeople() {
     return await this.getRequest()
     .then(data => this.people = data);
+  }
+
+  getPeopleLive(): Observable<any> {
+    //return this.getRequestLive().then((data) => this.people = data);
+    //this.http.get<BabyData>(this.baseUrl).pipe(data => this.people = data, retry(1));
+    //alert(this.people);
+   // return this.http.get<BabyData>(this.baseUrl2).pipe(retry(1)).subscribe();
+    //return this.http.get(this.baseUrl2).pipe(retry(1)).subscribe();
+
+
+    return this.http.get(`${this.baseUrl2}api_key=${environment.firebase.apiKey}`);
+
+    //return this.getRequestLive();
+  }
+
+  async getRequestLive(){
+    return await lastValueFrom(this.http.get<BabyData>(this.baseUrl2));
   }
 
   async getRequest() {
