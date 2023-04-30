@@ -1,0 +1,55 @@
+body{
+    background-color: rgb(10, 10, 10);
+    height: 100vh;
+    display: grid;
+    place-items: center;
+    background-color: black;
+    margin: 0rem;
+    overflow: hidden;  
+}
+
+ion-content{
+    width: 570px;
+}
+
+ion-card:after{
+    background: linear-gradient(
+        transparent,
+        mediumslateblue,
+        transparent
+    );
+
+    height: 70px;
+    width: 2px;
+    position: absolute;
+    left: -1px;
+    top: 60%;
+    opacity: 0;
+    content: "";
+
+    transition: top, opacity;
+    transition-duration: 500ms;
+    transition-timing-function: ease;
+}
+
+ion-card:after{
+    top:60%;
+    opacity: 0;
+}
+
+ion-card:hover:after{
+    top: 25%;
+    opacity: 1;
+}
+
+ion-card{
+    position: relative;
+    background-color: rgb(16 16 16);
+    border: 1px solid rgb(255 255 255 / 5%);
+    border-radius: 1.5rem;
+    padding: 0.1rem;
+}
+
+img{
+    border-radius: 1.5rem;
+}
