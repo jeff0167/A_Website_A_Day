@@ -18,7 +18,7 @@ export class AppComponent {
     this.platform.ready().then(() => {
       this.starWarsService.initialize();
       this.babyService.initialize();
-      this.fireService.initialize();
+     // this.fireService.initialize();
 
     });
   }

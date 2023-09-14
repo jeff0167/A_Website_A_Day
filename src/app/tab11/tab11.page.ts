@@ -20,24 +20,25 @@ interface StudentData {
 })
 export class Tab11Page implements OnInit {
 
-  students = [];
-  studentData: StudentData;
+  students : StudentData[];
+  studentData: StudentData[];
   studentForm: FormGroup | undefined;
 
   public babies: any;
 
+  ref: any;
+
   constructor(public babyService: BabyAPIService, private firebaseService: FirebaseService, public fb: FormBuilder, private db: AngularFireDatabase) {
-    this.studentData = {} as StudentData;
+    this.students = {} as StudentData[];
   }
 
   generateArray(obj: any){ // can't seem to make it use type people, and because of it a lot of errors are thrown
     return Object.keys(obj).map((key)=>{ return {key:key, value:obj[key]}});
 }
 
-
   ngOnInit(){ 
-   // this.babyService.getPeople().then(people => this.babies = people); 
-   //this.LiveSubscribeWithoutFirebaseCode();
+  //  this.babyService.getPeople().then(people => this.babies = people); 
+  //  this.LiveSubscribeWithoutFirebaseCode();
   //  this.babyService.getPeopleLive().subscribe((data) =>{
   //   alert(data);
   //  })
@@ -54,22 +55,17 @@ export class Tab11Page implements OnInit {
 
     console.log("Calling init");
 
- const ref = this.db.database.ref("Students");
-    ref.on('value', (snapshot) => {
+ this.ref = this.db.database.ref("Students");
+    this.ref.on('value', (snapshot) => {
       this.students = snapshot.val();
       console.log("the value" + JSON.stringify(snapshot.val()));
     });
 
   this.studentForm = this.fb.group({
-    Name: ['', [Validators.required]],
+    Address: ['', [Validators.required]],
     Age: ['', [Validators.required]],
-    Address: ['', [Validators.required]]
+    Name: ['', [Validators.required]]
   })
-
-
-  // this.firebaseService.read_students().subscribe((data) =>{
-  //   this.studentList = data;
-  // });
    
   //  this.firebaseService.read_students().subscribe(data => {
   //   this.students = data.map(e => {
@@ -81,20 +77,26 @@ export class Tab11Page implements OnInit {
   //       Address: e.payload.doc.data()['Address'],
   //     };
   //   })
+
+  //   console.log("getting students from firebase store");
   //   console.log(this.students);
 
   // });
 }
 
-// CreateRecord() {
-//   console.log(this.studentForm.value);
-//   this.firebaseService.create_student(this.studentForm.value).then(resp => {
-//     this.studentForm.reset();
-//   })
-//     .catch(error => {
-//       console.log(error);
-//     });
-// }
+createStudent(){
+    this.CreateRecord();
+}
+
+CreateRecord() {
+  //console.log(this.studentForm.value);
+  // this.firebaseService.create_student(this.studentForm.value).then(resp => {
+  //   this.studentForm.reset();
+  // })
+  //   .catch(error => {
+  //     console.log(error);
+  //   });
+}
 
 // RemoveRecord(rowID) {
 //   this.firebaseService.delete_student(rowID);
@@ -139,5 +141,4 @@ export class Tab11Page implements OnInit {
   }
 
   
-
 }
